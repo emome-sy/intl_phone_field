@@ -120,11 +120,11 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                 itemBuilder: (ctx, index) => Column(
                   children: <Widget>[
                     ListTile(
-                      leading: kIsWeb
+                      leading: kIsWeb || (_filteredCountries[index].code.toLowerCase() == 'sy')
                           ? Image.asset(
                               'assets/flags/${_filteredCountries[index].code.toLowerCase()}.png',
                               package: 'intl_phone_field',
-                              width: 32,
+                              width: 18,
                             )
                           : Text(
                               _filteredCountries[index].flag,
